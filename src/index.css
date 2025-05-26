@@ -1,68 +1,219 @@
+/*
+Base
+*/
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --cursive: cursive;
+  --emoji: emoji;
+  --fangsong: fangsong;
+  --fantasy: fantasy;
+  --math: math;
+  --monospace: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace /* 1 */;
+  --sans-serif: sans-serif;
+  --serif: serif;
+  --system-ui:
+    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji" /* 2 */;
+  --ui-monospace: ui-monospace;
+  --ui-rounded: ui-rounded;
+  --ui-sans-serif: ui-sans-serif;
+  --ui-serif: ui-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
 
-body {
-  margin: 0;
+:where(html) {
+  line-height: 1.15;
+  text-size-adjust: 100%;
+  /* tab-size: 4; */
+}
+
+:where(html, body, #root) {
+  width: stretch;
+  height: 100svh;
+  min-height: 100svh;
+}
+
+:where(body) {
+  margin: 0 /* 1 */;
+  font-family: var(--system-ui) /* 2 */;
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, ol, ul, dl, blockquote, pre) {
+  margin: 0 /* 1 */;
+  font-size: 1rem /* 2 */;
+  line-height: 1.5 /* 3 */;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-weight: bolder;
+}
+
+:where(hr) {
+  height: 0 /* 1 */;
+  color: inherit /* 2 */;
+}
+
+:where(abbr[title]) {
+  text-decoration: underline dotted;
+}
+
+:where(b, strong) {
+  font-weight: bolder;
+}
+
+:where(code, kbd, samp, pre) {
+  font-family: var(--monospace) /* 1 */;
+  font-size: 1em /* 2 */;
+}
+
+:where(small) {
+  font-size: 80%;
+}
+
+:where(sub, sup) {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+:where(sub) {
+  bottom: -0.25em;
+}
+
+:where(sup) {
+  top: -0.5em;
+}
+
+:where(table) {
+  text-indent: 0 /* 1 */;
+  border-color: inherit /* 2 */;
+}
+
+:where(button, .appearance-button, input, optgroup, select, textarea) {
+  font-family: inherit /* 1 */;
+  font-size: 100% /* 1 */;
+  line-height: 1.15 /* 1 */;
+  margin: 0 /* 2 */;
+}
+
+:where(button, .appearance-button, select) {
+  text-transform: none;
+}
+
+:where(button, .appearance-button, [type="button" i], [type="reset" i], [type="submit" i]) {
+  appearance: button /* 1 */;
+  cursor: pointer /* 2 */;
+}
+
+:where(button, .appearance-button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:where("::-moz-focus-inner") {
+  border-style: none;
+  padding: 0;
+}
+
+:where(":-moz-focusring") {
+  outline: 1px dotted ButtonText;
+}
+
+:where(":-moz-ui-invalid") {
+  box-shadow: none;
+}
+
+:where(legend) {
+  padding: 0;
+}
+
+:where(progress) {
+  vertical-align: baseline;
+}
+
+:where("::-webkit-inner-spin-button, ::-webkit-outer-spin-button") {
+  height: auto;
+}
+
+:where([type="search" i]) {
+  appearance: textfield /* 1 */;
+  outline-offset: -2px /* 2 */;
+}
+
+:where("::-webkit-search-decoration") {
+  appearance: none;
+}
+
+:where("::-webkit-file-upload-button") {
+  appearance: button /* 1 */;
+  font: inherit /* 2 */;
+}
+
+:where(summary) {
+  display: list-item;
+}
+
+/*
+Pages, Components
+*/
+.app-layout {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  height: 100%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.app-header {
+  background: #1a202c;
+  color: white;
+  padding: 1rem;
+  font-size: 1.25rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.app-main {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.app-nav {
+  width: 240px;
+  background: #f7fafc;
+  border-right: 1px solid #e2e8f0;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.app-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-nav li {
+  margin-bottom: 0.5rem;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: 0.2s background-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.app-nav li:hover {
+  background: #edf2f7;
+}
+
+.app-nav li.active {
+  background: #e2e8f0;
+  font-weight: bold;
+}
+
+.app-content {
+  flex: 1;
+  position: relative;
 }
