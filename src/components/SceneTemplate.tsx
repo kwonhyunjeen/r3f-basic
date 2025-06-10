@@ -28,10 +28,10 @@ export const SceneTemplate = ({ children, code, description, guide, title }: Sce
 
       {/* Guide - CodeSandbox */}
       <div className="w-full flex">
-        <div className="w-full bg-amber-50 p-3 rounded-md mt-6">
+        <div className="w-full bg-amber-50 p-4 rounded-md mt-6">
           <h4 className="font-medium text-amber-800">Try it out</h4>
           <p className="text-sm text-amber-700">{guide}</p>
-          <div className="mt-6 flex justify-between items-center">
+          <div className="mt-4 flex justify-between items-center">
             <button
               className="text-sm px-4 py-2 rounded-md border border-amber-200 bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors"
               onClick={() => setShowCode(!showCode)}
