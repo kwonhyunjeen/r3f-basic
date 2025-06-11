@@ -1,54 +1,63 @@
-# React + TypeScript + Vite
+# R3F Basic
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a basic implementation using React Three Fiber (R3F), showcasing various 3D scenes with different functionalities.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Basic scene setup with React Three Fiber
+- Various material demonstrations
+- Lighting techniques showcase
+- Interactive sidebar navigation
+- Custom matcap materials (blue, gold, red, silver)
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+```
+src/
+  ├── components/            # Reusable components
+  │   ├── SceneTemplate.tsx  # Template for consistent scene layout
+  │   └── Sidebar.tsx        # Navigation sidebar
+  ├── pages/                 # Different scene implementations
+  │   ├── BasicScene.tsx     # Fundamental 3D scene
+  │   ├── LightsScene.tsx    # Demonstrates lighting techniques
+  │   └── MaterialsScene.tsx # Showcases different materials
+  └── main.tsx               # Entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
+- Node.js
+- pnpm
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+pnpm install
 ```
+
+3. Start the development server:
+
+```bash
+pnpm dev
+```
+
+## Deployment
+
+This project is deployed using Vercel. You can view the deployed project at [https://react-three-fiber-basic.vercel.app](https://react-three-fiber-basic.vercel.app)
+
+## Built With
+
+- [React](https://reactjs.org/) - UI library
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Vite](https://vitejs.dev/) - Build tool and development server
+- [React Three Fiber](https://github.com/pmndrs/react-three-fiber) - React renderer for Three.js
+- [Three.js](https://threejs.org/) - 3D library
+
+## License
+
+This project is licensed under the MIT License
