@@ -100,6 +100,7 @@ export const BasicScene = () => {
             position: [5, 5, 5],
           }}
         >
+          <color attach="background" args={["#000000"]} />
           <ambientLight intensity={0.5} />
           <directionalLight position={[0, 2, 5]} intensity={1} castShadow />
           <OrbitControls />

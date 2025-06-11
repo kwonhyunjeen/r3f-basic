@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./index.css";
-import { BasicScene, LightsScene } from "./pages";
+import { BasicScene, LightsScene, MaterialsScene } from "./pages";
 import { Sidebar } from "./components/Sidebar";
 
 const EXAMPLES = {
   basic: { label: "Basic", component: <BasicScene /> },
   lights: { label: "Lights", component: <LightsScene /> },
+  materials: { label: "Materials", component: <MaterialsScene /> },
 } as const;
 
 type ExampleKey = keyof typeof EXAMPLES;
