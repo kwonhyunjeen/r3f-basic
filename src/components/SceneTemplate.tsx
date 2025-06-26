@@ -20,7 +20,7 @@ export const SceneTemplate = ({
   const [showCode, setShowCode] = React.useState(false);
 
   return (
-    <div className="flex flex-col w-full max-w-5xl gap-6 m-auto">
+    <div className="flex flex-col w-full max-w-4xl gap-6 m-auto">
       {/* Description */}
       <div className="w-full flex flex-col">
         <div className="bg-white rounded-lg">
